@@ -131,11 +131,11 @@ nav ul li a:hover {
   }
   
   /* Añade un efecto de transición para los títulos */
-  .card h2, .card h3 {
-    transition: transform 0.3s ease;
+  .card-content {
+    transition: transform 0.3s ease-in-out;
   }
   
-  .card h2:hover, .card h3:hover {
+  .card-content:hover {
     transform: scale(1.1);
   }
   
