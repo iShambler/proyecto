@@ -1,50 +1,61 @@
 /* Estilos generales */
-body {
-  margin: 0;
+*{
   padding: 0;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
   font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 /* Estilos del header */
 header {
   background-color: #000000;
   color: white;
-  padding: 10px 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#barra:hover {
+  text-decoration: none;
 }
 
 nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  width: 100%;
 }
 
-nav img {
-  height: 80px;
+nav a img {
+  height: 50px;
 }
 
 nav ul {
-  list-style-type: none;
   display: flex;
+  list-style: none;
   margin: 0;
   padding: 0;
+  gap: 10px;
+  margin-left: auto;
 }
 
 nav ul li {
-  margin-left: 20px;
+  display: flex;
+  align-items: center;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
 }
+
 nav ul li a:hover {
-  color:#cccccc
+  color: #cccccc;
 }
 /*Estilo para tarjetas blog*/
 .blog-container {
@@ -135,9 +146,7 @@ nav ul li a:hover {
     transition: transform 0.3s ease-in-out;
   }
   
-  .card-content:hover {
-    transform: scale(1.1);
-  }
+
   
   .card p {
     margin-bottom: 20px;

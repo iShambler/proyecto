@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Magic: The Gathering</title>
+  <link rel="stylesheet" href="/ProyectoFinal/css/index.css">
   <link rel="stylesheet" href="../css/index.css">
   <link rel="icon" type="imagen/x-icon" href="../img/icono.jpg">
+
   
 </head>
 <body>
@@ -19,9 +21,10 @@
       </ul>
     </nav>
   </header>
+  
 
   <div class="background-section">
-    <h1>Magic: The Gathering - La grandeza, a toda costa</h1>
+    <h1 id="titulo">Magic: The Gathering - La grandeza, a toda costa</h1>
   </div>
 
   <main>
@@ -29,65 +32,87 @@
       <h2>Últimas Noticias</h2>
       <div class="noticias-container">
         <article class="noticia">
-          <h3>La colaboración más esperada: ¡Marvel!</h3>
+          <h3>
+            <img src="../img/atencion.png" alt="Imagen de Noticia 1">
+            La colaboración más esperada: ¡Marvel!
+          </h3>
           <img src="../img/anuncio.jpg" alt="Imagen de Noticia 1">
+          
           <p>La comunidad de Magic: The Gathering está al borde de la emoción con el anuncio de una colaboración sin precedentes con Marvel. Esta alianza traerá a la vida a personajes icónicos del universo Marvel en forma de cartas coleccionables, permitiendo a los jugadores experimentar batallas épicas entre héroes y villanos. Los detalles sobre las cartas y su lanzamiento se revelarán en un evento especial, ¡así que mantente atento!</p>
         </article>
         <article class="noticia">
-          <h3>¡Se acerca la fecha del Regional Championship: Praga!</h3>
+          <h3>
+            <img src="../img/atencion.png" alt="Imagen de Noticia 1">
+            ¡Se acerca la fecha del Regional Championship: Praga!</h3>
           <img src="../img/evento.jpg" alt="Imagen de Noticia 2">
+          
           <p>Los preparativos están en marcha para el tan esperado Regional Championship que se llevará a cabo en Praga. Jugadores de toda Europa se reunirán para competir por un lugar en el campeonato mundial. Con emocionantes premios y la oportunidad de demostrar habilidades estratégicas, este evento promete ser una experiencia inolvidable tanto para competidores como para espectadores. ¡No te lo pierdas!</p>
         </article>
         <article class="noticia">
-          <h3>Magic, ¿un juego de azar?</h3>
+          <h3>
+            <img src="../img/atencion.png" alt="Imagen de Noticia 1">Magic, ¿un juego de azar?</h3>
           <img src="../img/jugando.jpg" alt="Imagen de Noticia 3">
+          
           <p>En el mundo de los juegos de cartas, Magic: The Gathering ha sido objeto de debate sobre si se trata de un juego de habilidad o de azar. En este artículo, exploramos las diferentes perspectivas sobre la mecánica del juego, analizando cómo la estrategia y la toma de decisiones pueden influir en el resultado de cada partida. Únete a nosotros mientras desentrañamos los mitos y realidades detrás de esta apasionante discusión.</p>
         </article>
       </div>
     </section>
-    <div class="chat-container">
-      <div class="chat-header">
-        <h3>¡Chatea con los demás usuarios!</h3>
-      </div>
-      <div class="chat-messages">
-        <div class="message">
-          <span class="user">Liliana24:</span> ¡Hola a todos!
-        </div>
-        <div class="message">
-          <span class="user">JaceMindEscultor:</span> ¿Qué opinan del nuevo set?
-        </div>
-      </div>
-      <div class="chat-input">
-        <input type="text" placeholder="Escribe un mensaje...">
-        <button>Enviar</button>
-      </div>
+<!-- Botón para abrir el chat -->
+<button id="openChatBtn" onclick="openChat()" style="display:none; position: fixed; bottom: 20px; right: 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px 20px; cursor: pointer;">Abrir Chat</button>
+
+<div class="chat-container">
+  <div class="chat-header">
+    <h3>¡Chatea con los demás usuarios!</h3>
+    <button class="close-chat" onclick="closeChat()">X</button> <!-- Botón para cerrar el chat -->
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="message">
+      <span class="user">Liliana24:</span> ¡Hola a todos!
     </div>
+    <div class="message">
+      <span class="user">JaceMindEscultor:</span> ¿Qué opinan del nuevo set?
+    </div>
+  </div>
+  <div class="chat-input">
+    <input type="text" id="messageInput" placeholder="Escribe un mensaje...">
+    <button id="sendMessageBtn">Enviar</button>
+  </div>
+</div>
+
+
+    
 
     <section id="como-jugar">
       <h2>Timeless: Un Nuevo Formato Sin Límites</h2>
-      <p>Timeless surge como una revolución en Magic: The Gathering diseñado para liberar la creatividad de los jugadores más experimentados Este formato digital rompe todas las barreras tradicionales permitiendo usar cualquier carta disponible sin restricciones de rotación o set específico La verdadera magia de Timeless radica en su capacidad para desafiar las estrategias convencionales donde cada partida se convierte en un lienzo en blanco para la innovación y el despliegue de combinaciones nunca antes vistas Los jugadores pueden mezclar cartas de diferentes eras y estilos generando partidas imprevisibles y emocionantes Un nuevo horizonte se abre para los amantes de Magic donde la única limitación es la imaginación del jugador</p>
+      <img src="../img/novedad.png" alt="Novedad" class="novedad-icon">
+      <p>Timeless surge como una revolución en Magic: The Gathering diseñado para liberar la creatividad de los jugadores más experimentados. Este formato digital rompe todas las barreras tradicionales permitiendo usar cualquier carta disponible sin restricciones de rotación o set específico. La verdadera magia de Timeless radica en su capacidad para desafiar las estrategias convencionales donde cada partida se convierte en un lienzo en blanco para la innovación y el despliegue de combinaciones nunca antes vistas. Los jugadores pueden mezclar cartas de diferentes eras y estilos generando partidas imprevisibles y emocionantes. Un nuevo horizonte se abre para los amantes de Magic donde la única limitación es la imaginación del jugador</p>
     </section>
 
     <section id="galeria">
       <h2 id="carta">Las cartas de la semana</h2>
-      <div class="galeria-container">
-        <figure>
-          <img src="../img/bolt.jpg" alt="Carta icónica 1">
-          <figcaption>Lightning Bolt: ¡Tres puntos de daño brutal por un solo maná! Un rayo de destrucción que define el poder rojo en Magic.</figcaption>
-        </figure>
-        <figure>
-          <img src="../img/lotus.jpg" alt="Carta icónica 2">
-          <figcaption>Black Lotus: ¡La carta más legendaria! Genera tres manás de golpe, rompiendo literalmente las reglas del juego.</figcaption>
-        </figure>
-        <figure>
-          <img src="../img/recall.jpg" alt="Arte del juego">
-          <figcaption>Ancestral Recall: ¡Increíble! Robar tres cartas por un maná azul, una ventaja estratégica que desafía toda lógica.</figcaption>
-        </figure>
+      <div class="carousel-container">
+        <button class="carousel-button left">&lt;</button>
+        <div class="carousel">
+          <figure class="card">
+            <img src="../img/bolt.jpg" alt="Carta icónica 1">
+            <figcaption><span class="nombre">Lightning Bolt:</span> ¡Tres puntos de daño brutal por un solo maná! Un rayo de destrucción que define el poder rojo en Magic.</figcaption>
+          </figure>
+          <figure class="card">
+            <img src="../img/lotus.jpg" alt="Carta icónica 2">
+            <figcaption><span class="nombre">Black Lotus:</span> ¡La carta más legendaria! Genera tres manás de golpe, rompiendo literalmente las reglas del juego.</figcaption>
+          </figure>
+          <figure class="card">
+            <img src="../img/recall.jpg" alt="Arte del juego">
+            <figcaption><span class="nombre">Ancestral Recall:</span> ¡Increíble! Robar tres cartas por un maná azul, una ventaja estratégica que desafía toda lógica.</figcaption>
+          </figure>
+        </div>
+        <button class="carousel-button right">&gt;</button>
       </div>
     </section>
+    
   </main>
 
-  <footer class="footer">
+  <footer>
     <div class="footer-content">
       <div class="footer-logo">
         <img src="../img/logo2.png" alt="Logo de Magic: The Gathering" class="footer-main-logo">
@@ -109,6 +134,6 @@
       </div>
     </div>
   </footer>
-
+  <script src="../js/index.js"></script>
 </body>
 </html>
