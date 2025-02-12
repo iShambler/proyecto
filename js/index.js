@@ -166,43 +166,36 @@ if (window.innerWidth <= 768) {
 const carousel = document.querySelector('.carousel');
 const leftButton = document.querySelector('.carousel-button.left');
 const rightButton = document.querySelector('.carousel-button.right');
+const cards = carousel.querySelectorAll('.card');
 
-let position = 0;
+let currentIndex = 0;
 
-// Deshabilitar el botón izquierdo al inicio
-leftButton.disabled = true;
+function updateCarousel() {
+    const cardWidth = cards[0].offsetWidth;
+    carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    
+    // Actualizar estado de los botones
+    leftButton.disabled = currentIndex === 0;
+    rightButton.disabled = currentIndex === cards.length - 1;
+}
 
 rightButton.addEventListener('click', () => {
-  position -= 320;
-  position = Math.max(position, -((carousel.children.length - 1) * 320));
-  carousel.style.transform = `translateX(${position}px)`;
-
-  // Habilitar el botón izquierdo si no estamos al inicio
-  leftButton.disabled = false;
-
-  // Deshabilitar el botón derecho si llegamos al final
-  if (position === -((carousel.children.length - 1) * 320)) {
-    rightButton.disabled = true;
-  } else {
-    rightButton.disabled = false;
-  }
+    if (currentIndex < cards.length - 1) {
+        currentIndex++;
+        updateCarousel();
+    }
 });
 
 leftButton.addEventListener('click', () => {
-  position += 320;
-  position = Math.min(position, 0);
-  carousel.style.transform = `translateX(${position}px)`;
-
-  // Habilitar el botón derecho si no estamos al final
-  rightButton.disabled = false;
-
-  // Deshabilitar el botón izquierdo si llegamos al inicio
-  if (position === 0) {
-    leftButton.disabled = true;
-  } else {
-    leftButton.disabled = false;
-  }
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+    }
 });
+
+// Inicializar el carrusel
+updateCarousel();
+
 
   
 
@@ -211,3 +204,23 @@ leftButton.addEventListener('click', () => {
   window.onload = function() {
     displayMessages();
   };
+
+  //Cambiar imagenes cada 5 segundos 
+  let slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
+
+function showSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (n + slides.length) % slides.length;
+  slides[currentSlide].classList.add('active');
+}
+
+function nextSlide() {
+  showSlide(currentSlide + 1);
+}
+
+// Iniciar el slideshow
+showSlide(0);
+
+// Cambiar de imagen cada 5 segundos
+setInterval(nextSlide, 5000);

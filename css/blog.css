@@ -9,9 +9,9 @@ body {
   grid-template-rows: auto 1fr auto;
   min-height: 100dvh;
   font-family: Arial, sans-serif;
-}
-
-/* Estilos del header */
+  background: rgb(255,179,109);
+  background: linear-gradient(90deg, rgba(255,179,109,1) 0%, rgba(251,230,168,1) 15%, rgba(251,230,168,1) 85%, rgba(255,179,109,1) 100%); 
+}/* Estilos del header */
 header {
   background-color: #000000;
   color: white;
@@ -68,7 +68,9 @@ nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 20px;
+    border-radius: 1rem; 
   }
+
   
   .card {
     flex: 1;

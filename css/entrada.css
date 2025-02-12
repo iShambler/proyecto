@@ -198,6 +198,10 @@
         max-width: 100%;
         margin: 0 0 20px 0;
     }
+    .post-section img {
+        order: 1;
+        margin: 0 !important;
+    }
 
     .post-image.right {
         order: 1;

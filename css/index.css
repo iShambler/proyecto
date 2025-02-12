@@ -20,6 +20,33 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+/*para transicionar imagenes */
+.slideshow-container {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 150px;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+
 
 #barra:hover {
   text-decoration: none;
@@ -61,6 +88,14 @@ nav ul li a:hover {
   color:black;
   font-size: 16px;
 }
+.timeless-image {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1%;
+}
 @media screen and (max-width: 1500px) {
  #titulo {
   font-size: 24px; /* Tamaño reducido para pantallas menores a 768px */
@@ -68,7 +103,7 @@ nav ul li a:hover {
 }
 /* Estilos para la sección de fondo */
 .background-section {
-  background-image: url('/ProyectoFinal/img/body.jpg');
+  background-image: url('../img/body.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -96,7 +131,7 @@ nav ul li a:hover {
 
 /* Estilos para la galería de cartas */
 #galeria {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 20px auto;
   padding: 0 20px;
 }
@@ -118,9 +153,6 @@ figure {
   transition: transform 0.2s;
 }
 
-/*figure:hover {
-  transform: scale(1.05);
-}*/
 
 figure img {
   width: 100%;
@@ -166,7 +198,13 @@ main {
   display: flex;
   flex-wrap: wrap;
 }
-
+#galeria-titulo {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 2.5rem;
+}
 .noticia {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
@@ -227,6 +265,11 @@ main {
   margin-bottom: 1rem;
   text-align: center;
   padding-right: 60px; /* Añadido para dar espacio a la imagen */
+}
+.parrafo {
+  color: #34495e;
+  text-align: justify;
+  margin-top:1rem;
 }
 
 #como-jugar p {
@@ -463,57 +506,85 @@ footer {
   }
 }
 
-/*Prueba Carousel cartas*/
+/* Contenedor principal del carrusel */
 .carousel-container {
   position: relative;
   width: 100%;
-  overflow: hidden; /* Esto ocultará todo lo que se salga del contenedor */
+  overflow: hidden; /* Cambiado de 'visible' a 'hidden' */
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Carrusel interno */
 .carousel {
+  
   display: flex;
   transition: transform 0.3s ease-in-out;
 }
 
-.card {
-  flex: 0 0 300px;
-  height: 200px;
-  margin-right: 20px;
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Estilo de las cartas */
+.card { 
+  flex: 0 0 calc(33.333% - 20px);
+  margin: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
+.card img {
+  width: 60%;
+  height: auto;
+  object-fit: cover; /* Asegura que la imagen cubra todo el espacio */
+}
+
+.card figcaption { /* Ajustado para coincidir con tu HTML */
+  padding: 15px;
+}
+
+.card .nombre { /* Ajustado para coincidir con tu HTML */
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Botones del carrusel */
 .carousel-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   color: white;
   border: none;
-  padding: 10px;
+  padding: 12px;
   cursor: pointer;
-  font-size: 18px;
-  z-index: 10; /* Esto asegura que los botones estén por encima de las imágenes */
+  font-size: 20px;
+  z-index: 10;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .carousel-button.left {
-  left: 10px;
+  left: 15px;
 }
 
 .carousel-button.right {
-  right: 10px;
-}
-/* Efecto al pasar el ratón */
-.card img:hover {
-  transform: scale(3); /* Aumenta el tamaño de la carta */
-  z-index: 10; /* Asegura que esté por encima de las demás cartas */
-  transition-delay: 2s; /* Espera dos segundos antes de aplicar el efecto */
+  right: 15px;
 }
 
-/* Asegura que las cartas no se corten al agrandarse */
-.carousel-container {
-  overflow: visible; /* Permite que las cartas agrandadas sean visibles */
+/* Eliminado el código de los indicadores ya que no se usan en tu HTML */
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .card {
+    flex: 0 0 calc(50% - 20px); /* Dos cartas visibles en pantallas medianas */
+  }
 }
 
+@media (max-width: 480px) {
+  .card {
+    flex: 0 0 calc(100% - 20px); /* Una carta visible en pantallas pequeñas */
+  }
+}
