@@ -24,7 +24,7 @@ header {
 .slideshow-container {
   position: relative;
   overflow: hidden;
-  height: 300px;
+  height: 500px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -95,38 +95,7 @@ nav ul li a:hover {
   align-items: center;
   justify-content: center;
   border-radius: 1%;
-}
-@media screen and (max-width: 1500px) {
- #titulo {
-  font-size: 24px; /* Tamaño reducido para pantallas menores a 768px */
- }
-}
-/* Estilos para la sección de fondo */
-.background-section {
-  background-image: url('../img/body.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 500px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 150px;
-}
 
-.background-section h1 {
-  margin-top: 330px;
-  color: rgb(255, 255, 255);
-  font-family: 'Oswald', sans-serif;
-  font-size: 3.5em;
-  font-weight: 700;
-  max-width: 60%;
-  text-align: center;
-  text-shadow:
-    2px 2px 4px rgba(0,0,0,0.5),
-    0 0 10px rgba(0,0,0,0.7);
-  letter-spacing: 2px;
 }
 
 /* Estilos para la galería de cartas */
@@ -167,10 +136,6 @@ figcaption {
   color: #333;
 }
 
-/* Estilos para el contenido principal */
-main {
-  flex: 1;
-}
 
 /* Estilos para noticias */
 #noticias article {
@@ -241,13 +206,6 @@ main {
   max-width: 100%;
 }
 
-/* Media query para pantallas más pequeñas */
-@media screen and (max-width: 768px) {
- .noticia h3 img {
-    width:20 px ;
-}
-}
-
 /* Estilos para la sección timeless (cómo jugar) */
 #como-jugar {
   position: relative; /* Añadido para posicionar la imagen */
@@ -287,20 +245,6 @@ main {
   right: 20px; /* Alineado con el padding derecho de la sección */
   width: 50px; /* Ajusta según el tamaño deseado */
   height: auto;
-}
-
-/* Media query para pantallas más pequeñas */
-@media screen and (max-width: 768px) {
-  #como-jugar h2 {
-    font-size: 1.5rem;
-    padding-right: 40px; /* Ajustado para pantallas pequeñas */
-  }
-
-  .novedad-icon {
-    width: 30px; /* Tamaño reducido para pantallas pequeñas */
-    top: 1.5rem; /* Ajustado para el nuevo padding */
-    right: 15px;
-  }
 }
 
 /* Estilo general para el chat (escritorio) */
@@ -397,21 +341,7 @@ main {
   background-color: #0056b3;
 }
 
-/* Estilo para el botón de eliminar */
-.delete-btn {
-  background-color: #ff4d4d; /* Rojo para indicar que es para eliminar */
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 0.8em;
-  margin-left: 10px;
-}
 
-.delete-btn:hover {
-  background-color: #ff1a1a; /* Un rojo más oscuro cuando se pasa el ratón */
-}
 
 section {
   max-width: 1200px;
@@ -433,13 +363,15 @@ footer {
   max-width: 1200px;
   display: flex;
   align-items: center;
+ 
+  
 }
 
 /* Redes sociales alineadas a la izquierda */
 .footer-icons-container {
   flex: 1;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
 .footer-icons {
@@ -485,7 +417,8 @@ footer {
 .footer-logo {
   flex: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  
 }
 
 .footer-main-logo {
@@ -493,24 +426,12 @@ footer {
   width: auto;
 }
 
-/* Media Query para tablet y dispositivos más pequeños */
-@media (max-width: 768px) {
-  /* Ocultamos el chat en dispositivos pequeños */
-  .chat-container {
-    display: none;
-  }
-
-  /* Mostramos el botón de abrir chat en dispositivos pequeños */
-  #openChatBtn {
-    display: block;
-  }
-}
 
 /* Contenedor principal del carrusel */
 .carousel-container {
   position: relative;
   width: 100%;
-  overflow: hidden; /* Cambiado de 'visible' a 'hidden' */
+  overflow: hidden;
   background-color: #f9f9f9;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -536,14 +457,14 @@ footer {
 .card img {
   width: 60%;
   height: auto;
-  object-fit: cover; /* Asegura que la imagen cubra todo el espacio */
+  object-fit: cover; 
 }
 
-.card figcaption { /* Ajustado para coincidir con tu HTML */
+.card figcaption { 
   padding: 15px;
 }
 
-.card .nombre { /* Ajustado para coincidir con tu HTML */
+.card .nombre { 
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -574,17 +495,4 @@ footer {
   right: 15px;
 }
 
-/* Eliminado el código de los indicadores ya que no se usan en tu HTML */
 
-/* Media query para pantallas más pequeñas */
-@media (max-width: 768px) {
-  .card {
-    flex: 0 0 calc(50% - 20px); /* Dos cartas visibles en pantallas medianas */
-  }
-}
-
-@media (max-width: 480px) {
-  .card {
-    flex: 0 0 calc(100% - 20px); /* Una carta visible en pantallas pequeñas */
-  }
-}
