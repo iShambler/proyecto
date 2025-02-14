@@ -44,7 +44,7 @@
     messageInput.value = "";
   }
 
-  // Función para mostrar los mensajes en el chat
+
 // Función para mostrar los mensajes en el chat
 function displayMessages() {
     var chatMessages = document.getElementById('chatMessages');
@@ -76,21 +76,6 @@ function displayMessages() {
         // Añadir el mensaje al contenedor de chat
         chatMessages.appendChild(newMessage);
     });
-}
-
-// Función para eliminar el mensaje
-function deleteMessage(index) {
-    // Obtener los mensajes del localStorage
-    var storedMessages = JSON.parse(localStorage.getItem('chatMessages')) || [];
-  
-    // Eliminar el mensaje seleccionado
-    storedMessages.splice(index, 1);
-  
-    // Guardar los mensajes actualizados en localStorage
-    localStorage.setItem('chatMessages', JSON.stringify(storedMessages));
-  
-    // Volver a mostrar los mensajes actualizados
-    displayMessages();
 }
 
 // Función para enviar el mensaje
@@ -196,10 +181,6 @@ leftButton.addEventListener('click', () => {
 // Inicializar el carrusel
 updateCarousel();
 
-
-  
-
-
   // Mostrar los mensajes cuando la página se carga
   window.onload = function() {
     displayMessages();
@@ -207,7 +188,7 @@ updateCarousel();
 
   //Cambiar imagenes cada 5 segundos 
   let slides = document.querySelectorAll('.slide');
-let currentSlide = 0;
+  let currentSlide = 0;
 
 function showSlide(n) {
   slides[currentSlide].classList.remove('active');
@@ -224,3 +205,5 @@ showSlide(0);
 
 // Cambiar de imagen cada 5 segundos
 setInterval(nextSlide, 5000);
+
+

@@ -4,6 +4,10 @@
   margin: 0;
 }
 
+.carousel-container2 {
+  display: none;
+}
+
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -15,18 +19,19 @@ body {
 /* Estilos del header */
 header {
 
-  position: fixed; /* Hace que el header se mantenga fijo */
-  top: 0; /* Coloca el header en la parte superior */
-  left: 0; /* Alinea el header al borde izquierdo */
-  width: 100%; /* Hace que el header ocupe todo el ancho */
-  background-color: #000000; /* Color de fondo */
-  color: white; /* Color del texto */
-  padding: 1rem; /* Espaciado dentro del header */
-  display: flex; /* Para usar flexbox y distribuir los elementos */
-  justify-content: space-between; /* Espacia los elementos a ambos lados */
-  align-items: center; /* Centra los elementos verticalmente */
-  z-index: 1000; /* Asegura que el header quede por encima de otros elementos */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000000;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
 }
+
 /*para transicionar imagenes */
 .slideshow-container {
   position: relative;
@@ -87,17 +92,19 @@ nav ul li {
 nav ul li a {
   color: white;
   text-decoration: none;
-  font-size: 1.1rem; /* Tamaño de la fuente */
-  margin-right:2rem;
+  font-size: 1.1rem;
+  margin-right: 2rem;
 }
 
 nav ul li a:hover {
-  color: #cccccc;
+  color: orange;
 }
+
 .nombre {
-  color:black;
+  color: black;
   font-size: 16px;
 }
+
 .timeless-image {
   height: 400px;
   width: 100%;
@@ -128,7 +135,7 @@ figure {
   background-color: #f5f5f5;
   border-radius: 10px;
   padding: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
 }
 
@@ -153,10 +160,10 @@ figcaption {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
-  display: flex; /* Añadido para alinear contenido */
-  flex-direction: column; /* Por defecto, columna */
+  display: flex;
+  flex-direction: column;
 }
 
 #noticias article:hover {
@@ -172,8 +179,9 @@ figcaption {
 .noticias-container {
   display: flex;
   flex-wrap: wrap;
-  
+
 }
+
 #galeria-titulo {
   text-align: center;
   width: 100%;
@@ -181,12 +189,13 @@ figcaption {
   color: #2c3e50;
   font-size: 2.5rem;
 }
+
 .noticia {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
   flex: 1;
   margin: 10px;
@@ -202,15 +211,15 @@ figcaption {
 
 /* Estilo para el título y la imagen de atención */
 .noticia h3 {
-  display: flex; /* Permite alinear la imagen y el texto en una fila */
-  align-items: center; /* Centra verticalmente la imagen con el texto */
+  display: flex;
+  align-items: center;
   padding: 10px;
 }
 
 .noticia h3 img {
-  margin-right: 10px; /* Espacio entre la imagen y el texto */
-  width: 60px; /* Ajusta el tamaño de la imagen */
-  height: auto; /* Mantiene la proporción de la imagen */
+  margin-right: 10px;
+  width: 60px;
+  height: auto;
 }
 
 .noticia img {
@@ -219,7 +228,7 @@ figcaption {
 
 /* Estilos para la sección timeless (cómo jugar) */
 #como-jugar {
-  position: relative; /* Añadido para posicionar la imagen */
+  position: relative;
   max-width: 1200px;
   margin: 20px auto;
   padding: 2rem 20px;
@@ -233,12 +242,13 @@ figcaption {
   font-size: 2rem;
   margin-bottom: 1rem;
   text-align: center;
-  padding-right: 60px; /* Añadido para dar espacio a la imagen */
+  padding-right: 60px;
 }
+
 .parrafo {
   color: #34495e;
   text-align: justify;
-  margin-top:1rem;
+  margin-top: 1rem;
 }
 
 #como-jugar p {
@@ -252,9 +262,9 @@ figcaption {
 /* Estilo para la imagen de novedad */
 .novedad-icon {
   position: absolute;
-  top: 2rem; /* Alineado con el padding superior de la sección */
-  right: 20px; /* Alineado con el padding derecho de la sección */
-  width: 50px; /* Ajusta según el tamaño deseado */
+  top: 2rem;
+  right: 20px;
+  width: 50px;
   height: auto;
 }
 
@@ -366,7 +376,7 @@ footer {
   color: white;
   padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between; /* Se usa space-between para separar la izquierda de la derecha */
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -374,7 +384,7 @@ footer {
 .footer-content {
   width: 100%;
   display: flex;
-  justify-content: space-between; /* Alinea las partes a la izquierda y derecha */
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -382,8 +392,8 @@ footer {
 .footer-logo {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinea el logo y copyright a la izquierda */
-  flex-grow: 1; /* Hace que la parte izquierda ocupe todo el espacio disponible */
+  align-items: flex-start;
+  flex-grow: 1;
 }
 
 .footer-main-logo {
@@ -436,7 +446,7 @@ footer {
 }
 
 .footer-links a:hover {
-  color: #cccccc;
+  color: orange;
 }
 
 
@@ -452,13 +462,13 @@ footer {
 
 /* Carrusel interno */
 .carousel {
-  
+
   display: flex;
   transition: transform 0.3s ease-in-out;
 }
 
 /* Estilo de las cartas */
-.card { 
+.card {
   flex: 0 0 calc(33.333% - 20px);
   margin: 10px;
   background-color: white;
@@ -470,14 +480,14 @@ footer {
 .card img {
   width: 60%;
   height: auto;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
-.card figcaption { 
+.card figcaption {
   padding: 15px;
 }
 
-.card .nombre { 
+.card .nombre {
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -508,4 +518,69 @@ footer {
   right: 15px;
 }
 
+@media screen and (max-width: 1000px) {
 
+  .carousel-container2 {
+    display: block;
+
+  }
+
+
+  .carousel {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .carousel-button.left {
+    display: none;
+  }
+
+  .carousel-button.right {
+    display: none;
+  }
+
+  .carousel-container {
+    display: none;
+  }
+
+  .noticias-container {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .chat-container {
+    display: none;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logo {
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .footer-right {
+    align-items: center;
+  }
+
+  .footer-icons-container {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .footer-links {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .footer-links a {
+    display: block;
+    margin: 5px 0;
+  }
+  .slideshow-container {
+    height: auto;
+  }
+}
