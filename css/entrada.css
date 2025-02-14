@@ -9,18 +9,24 @@
     grid-template-rows: auto 1fr auto;
     min-height: 100dvh;
     font-family: Arial, sans-serif;
+    padding-top:85px;
   }
   
   /* Estilos del header */
   header {
-    background-color: #000000;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
 
+    position: fixed; /* Hace que el header se mantenga fijo */
+    top: 0; /* Coloca el header en la parte superior */
+    left: 0; /* Alinea el header al borde izquierdo */
+    width: 100%; /* Hace que el header ocupe todo el ancho */
+    background-color: #000000; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 1rem; /* Espaciado dentro del header */
+    display: flex; /* Para usar flexbox y distribuir los elementos */
+    justify-content: space-between; /* Espacia los elementos a ambos lados */
+    align-items: center; /* Centra los elementos verticalmente */
+    z-index: 1000; /* Asegura que el header quede por encima de otros elementos */
+  }
   #barra:hover {
     text-decoration: none;
   }
@@ -52,6 +58,8 @@
   nav ul li a {
     color: white;
     text-decoration: none;
+    font-size: 1.1rem; /* Tamaño de la fuente */
+  margin-right:2rem;
   }
   
   nav ul li a:hover {
@@ -117,115 +125,79 @@
 }
 
 /* Estilos para el footer */
-.footer {
+footer {
     background-color: #000000;
     color: white;
-    padding: 20px 0;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 1rem 2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+  }
+  
+  .footer-content {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
     align-items: center;
-}
-
-.footer-logo {
-    flex: 1;
-}
-
-.footer-main-logo {
-    height: 80px;
-    width: auto;
-}
-
-.footer-center {
-    flex: 1;
-    text-align: center;
-}
-
-.copyright {
-    margin: 0;
-    font-size: 1em;
-}
-
-.footer-links {
-    font-size: 0.8em;
-    margin-top: 5px;
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: underline;
-    margin: 0 5px;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: #cccccc;
-}
-
-.footer-icons-container {
+   
+    
+  }
+  
+  /* Redes sociales alineadas a la izquierda */
+  .footer-icons-container {
     flex: 1;
     display: flex;
     justify-content: flex-end;
-}
-
-.footer-icons {
+  }
+  
+  .footer-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .footer-icon {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Copyright y enlaces centrados */
+  .footer-center {
+    flex: 1;
+    text-align: center;
+    font-size: 0.9em;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-.footer-icon {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s ease;
-}
-
-.footer-icon:hover {
-    transform: scale(1.1);
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    .post-section {
-        flex-direction: column;
-    }
-
-    .post-image {
-        max-width: 100%;
-        margin: 0 0 20px 0;
-    }
-    .post-section img {
-        order: 1;
-        margin: 0 !important;
-    }
-
-    .post-image.right {
-        order: 1;
-    }
-
-    .blog-post h1 {
-        font-size: 2em;
-    }
-
-    .blog-post h2 {
-        font-size: 1.5em;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-icons-container {
-        margin-top: 20px;
-    }
-
-    .footer-icons {
-        flex-direction: row;
-        justify-content: center;
-    }
-}
+    align-items: center;
+  }
+  
+  .footer-links {
+    margin-top: 5px;
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+  }
+  
+  .footer-links a:hover {
+    color: #cccccc;
+  }
+  
+  /* Logo alineado a la derecha */
+  .footer-logo {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    
+  }
+  
+  .footer-main-logo {
+    height: 60px;
+    width: auto;
+  }
+  

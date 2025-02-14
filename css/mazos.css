@@ -8,16 +8,30 @@
     grid-template-rows: auto 1fr auto;
     min-height: 100dvh;
     font-family: Arial, sans-serif;
+    padding-top:85px;
+    background: rgb(255,179,109);
+    background: linear-gradient(90deg, rgba(255,179,109,1) 0%, rgba(251,230,168,1) 15%, rgba(251,230,168,1) 85%, rgba(255,179,109,1) 100%); 
+  }
+  section {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
   }
   
   /* Estilos del header */
   header {
-    background-color: #000000;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+    position: fixed; /* Hace que el header se mantenga fijo */
+    top: 0; /* Coloca el header en la parte superior */
+    left: 0; /* Alinea el header al borde izquierdo */
+    width: 100%; /* Hace que el header ocupe todo el ancho */
+    background-color: #000000; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 1rem; /* Espaciado dentro del header */
+    display: flex; /* Para usar flexbox y distribuir los elementos */
+    justify-content: space-between; /* Espacia los elementos a ambos lados */
+    align-items: center; /* Centra los elementos verticalmente */
+    z-index: 1000; /* Asegura que el header quede por encima de otros elementos */
   }
   nav {
     display: flex;
@@ -46,6 +60,8 @@
   nav ul li a {
     color: white;
     text-decoration: none;
+    font-size: 1.1rem; /* Tamaño de la fuente */
+  margin-right:2rem;
   }
   
   nav ul li a:hover {
@@ -98,82 +114,93 @@ h1 {
 .cartas-clave strong {
     color: #e74c3c;
 }
-
+h1 {
+  margin-top: 20px;
+  font-size: 2.5em;
+  color: #e60000;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
 
 /* Estilos para el footer */
 footer {
-    background-color: #000000;
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: center;
-  }
+  background-color: #000000;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+ 
   
-  .footer-content {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    align-items: center;
-  }
+}
+
+/* Redes sociales alineadas a la izquierda */
+.footer-icons-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-icon {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
+
+.footer-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Copyright y enlaces centrados */
+.footer-center {
+  flex: 1;
+  text-align: center;
+  font-size: 0.9em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-links {
+  margin-top: 5px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.footer-links a:hover {
+  color: #cccccc;
+}
+
+/* Logo alineado a la derecha */
+.footer-logo {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
   
-  /* Redes sociales alineadas a la izquierda */
-  .footer-icons-container {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-  }
-  
-  .footer-icons {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .footer-icon {
-    width: 28px;
-    height: 28px;
-    transition: transform 0.3s ease;
-  }
-  
-  .footer-icon:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Copyright y enlaces centrados */
-  .footer-center {
-    flex: 1;
-    text-align: center;
-    font-size: 0.9em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .footer-links {
-    margin-top: 5px;
-  }
-  
-  .footer-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 8px;
-  }
-  
-  .footer-links a:hover {
-    color: #cccccc;
-  }
-  
-  /* Logo alineado a la derecha */
-  .footer-logo {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .footer-main-logo {
-    height: 60px;
-    width: auto;
-  }
-  
+}
+
+.footer-main-logo {
+  height: 60px;
+  width: auto;
+}
+
 
 @media (min-width: 1200px) {
     #mazos-container {
